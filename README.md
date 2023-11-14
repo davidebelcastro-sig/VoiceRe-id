@@ -16,7 +16,7 @@ python3 run.py
 
 ## Installation  
 
-You can use the requirements.txt file to install packages with pip:
+You can use the requirements.txt file to install packages with pip (created with the command pip freeze > requirements.txt):
 ``` 
 pip3 install -r requirements.txt
 ```
