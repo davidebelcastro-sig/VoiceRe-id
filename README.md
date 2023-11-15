@@ -62,6 +62,10 @@ You can use the requirements.txt file to install packages with pip (created with
 pip3 install -r requirements.txt
 ```
 
+## Dataset
+
+The dataset is downloaded from the [link](https://github.com/soerenab/AudioMNIST/tree/master).
+
 
 
 
