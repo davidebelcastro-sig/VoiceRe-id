@@ -1,0 +1,28 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def roc(path1,path2):
+    # Carica il tuo file CSV
+    df = pd.read_csv(path1)
+
+    # Estrai le colonne di interesse
+    far_values = df['far']
+    frr_values = df['frr']
+
+    # Calcola True Positive Rate (TPR) o Sensitivity (1-FRR)
+    tpr_values = 1 - frr_values
+
+    # Plotta la curva ROC
+    plt.figure(figsize=(8, 8))
+    plt.plot(far_values, tpr_values, label='ROC Curve')  
+
+
+
+
+    # Etichette e titoli
+    plt.title('Receiver Operating Characteristic (ROC) Curve')
+    plt.xlabel('False Positive Rate (FAR)')
+    plt.ylabel('True Positive Rate (TPR)')
+    plt.legend()
+    plt.savefig(path2)
+    plt.close()
