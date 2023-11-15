@@ -86,6 +86,8 @@ def main(data, file_name):
     print("F1-Score:", file=output_file)
     print(f1, file=output_file)
 
+    output_file.close()  
+
 
 if __name__ == '__main__':
     main("dataset.csv", "training_results")
