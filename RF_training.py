@@ -11,7 +11,7 @@ from PCA import PCA_analysis
 
 def main(data, file_name):
     #output_dir = r"C:\Users\susan\Documents\VSCode\BiometricSystems\output_file"
-    output_dir = Path("output_files")
+    output_dir = Path("output")
     if not output_dir.exists():
         output_dir.mkdir()
     output_path = os.path.join(output_dir, file_name + ".txt")
