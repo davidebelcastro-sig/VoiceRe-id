@@ -26,7 +26,7 @@ width = 589
 height = 600
 
 root = customtkinter.CTk()
-root.title("Voice Re-identification")
+root.title("Voice Re-identification with PCA")
 # Imposta la funzione on_closing come gestore della chiusura della finestra
 root.protocol("WM_DELETE_WINDOW", on_closing)
 
@@ -58,7 +58,7 @@ background_label.place(relwidth=1, relheight=1)  # Copre l'intera finestra princ
 
 btn1 = customtkinter.CTkButton(master = root, text = "Testing", height=40, corner_radius=8, fg_color="transparent",
                 hover_color="white", border_color="#93f233", text_color="#93f233", border_width=2, command=testing)
-btn1.place(relx=0.3, rely=0.7, anchor="center")
+btn1.place(relx=0.5, rely=0.7, anchor="center")
 
 
 root.mainloop()

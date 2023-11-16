@@ -28,7 +28,7 @@ width = 589
 height = 600
 
 root = customtkinter.CTk()
-root.title("Voice Re-identification")
+root.title("Voice Re-identification without PCA")
 # Imposta la funzione on_closing come gestore della chiusura della finestra
 root.protocol("WM_DELETE_WINDOW", on_closing)
 

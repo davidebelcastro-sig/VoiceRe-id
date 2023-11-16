@@ -21,36 +21,36 @@ single_training and training_rinforzato, they are two different ways to do train
 
 ### Linux
 
-For PCA/closed_set
+For PCA/closed_set, inside this directory run:
 ```
 bash start.sh
 ```
 and the output are presents in the directory PCA/closed_set/output
 
 
-For PCA/opened_set
+For PCA/opened_set, inside this directory run:
 ```
 python3 run.py
 ```
 and the output are presents in the directory PCA/opened_set/output
 
 
-For no_PCA/single_training/closed_set
+For no_PCA/single_training/closed_set, inside this directory run:
 ```
 bash start.sh
 ```
 
-For no_PCA/single_training/opened_set
+For no_PCA/single_training/opened_set, inside this directory run:
 ```
 python3 run.py
 ```
 
-For no_PCA/training_rinforzato/closed_set
+For no_PCA/training_rinforzato/closed_set, inside this directory run:
 ```
 bash start.sh
 ```
 
-For no_PCA/training_rinforzato/opened_set
+For no_PCA/training_rinforzato/opened_set, inside this directory run:
 ```
 python3 run.py
 ```
