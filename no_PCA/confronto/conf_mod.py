@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Carica i dati dai file CSV
-df1 = pd.read_csv('../single_training/file_csv/risultati.csv')
-df2 = pd.read_csv('../training_rinforzato/csv/accuracy.csv')
+df1 = pd.read_csv('../single_training/opened_set/file_csv/risultati.csv')
+df2 = pd.read_csv('../training_rinforzato/opened_set/csv/accuracy.csv')
 
 thresholds = df1['threshold']
 #frr
@@ -28,3 +28,4 @@ plt.yticks([0, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.50, 0.55, 0.6, 0.65
 plt.title('FRR, FAR, ACC')
 plt.legend()
 plt.show()
+plt.close()
