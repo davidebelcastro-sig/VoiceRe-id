@@ -28,6 +28,7 @@ def PCA_analysis(data,i):
         plt.savefig('./output/PCA_combinato.png')
     else:
         plt.savefig('./output/PCA_'+str(i)+".png")
+    plt.close()
     pca_model = decomposition.PCA(n_components=26) # crea un modello PCA con 25 componenti principali
     X_train_pca = pca_model.fit_transform(X_train_scaled) #X_pca = X_train, calcola e applica la PCA al set di dati standardizzato X_scaled
     X_val_pca = pca_model.transform(X_val_scaled)

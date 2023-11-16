@@ -14,6 +14,7 @@ def main():
     print("-Combining models")
     combina_modelli.start() #crea il modello combinato
     file_name = "training_results_combinati"
+    print("-Prediction")
     prediction.prediction(dataset,file_name)
     #visualizza grafici
     # Specifica la directory da cui iniziare la ricerca

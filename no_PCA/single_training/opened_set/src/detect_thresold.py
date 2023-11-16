@@ -38,5 +38,5 @@ plt.ylabel('Rate')
 plt.title('FAR and FRR Curves')
 plt.legend()
 plt.savefig('./output/FAR_FRR.png')
-
+plt.close()
 
