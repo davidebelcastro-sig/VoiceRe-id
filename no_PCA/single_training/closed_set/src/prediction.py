@@ -4,6 +4,8 @@ import pickle
 import os
 import zipfile
 
+print("Accuracy calculation...")
+
 # Carica i dati di addestramento e test
 train_data = pd.read_csv('./file_csv/features_train.csv')
 test_data = pd.read_csv('./file_csv/features_test.csv')

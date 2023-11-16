@@ -25,15 +25,12 @@ def prediction(data, file_name):
     classification_rep = classification_report(y_val, y_pred)
     conf_matrix = confusion_matrix(y_val, y_pred)
 
+    #scrivo su file
     # Stampa le altre metriche di valutazione
-    print("\nClassification Report:")
-    print(classification_rep)
-    print("\nClassification Report:", file=output_file)
+    print("Classification Report:", file=output_file)
     print(classification_rep, file=output_file)
 
     # confusion matrix
-    print("\nConfusion Matrix:")
-    print(conf_matrix)
     print("\nConfusion Matrix:", file=output_file)
     print(conf_matrix, file=output_file)
 
@@ -41,16 +38,13 @@ def prediction(data, file_name):
     precision = precision_score(y_val, y_pred, average='weighted')
     recall = recall_score(y_val, y_pred, average='weighted')
     f1 = f1_score(y_val, y_pred, average='weighted')
-    print("\nPrecision:", precision)
-    print("Recall:", recall)
-    print("F1-Score:", f1)
     print("\nPrecision:", file=output_file)
     print(precision, file=output_file)
     print("Recall:", file=output_file)
     print(recall, file=output_file)
     print("F1-Score:", file=output_file)
     print(f1, file=output_file)
-
+    print("Finished, you can see the output in output/training_results_combinati.txt")
     output_file.close()  
 
 

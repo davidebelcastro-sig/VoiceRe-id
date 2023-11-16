@@ -17,7 +17,7 @@ if [ -e "./file_csv/accessi.csv" ]; then
 
 else
 
-	echo "-Divido dataset"
+	echo "-Dataset division"
 	python3 src/dividi_dataset.py
 	echo "-Feature Extraction"
 	python3 src/create_file_csv_train.py

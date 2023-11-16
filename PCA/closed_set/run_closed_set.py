@@ -8,8 +8,10 @@ def main():
     dataset = "dataset.csv"
     file_name = "training_results"
     #extrai i modelli
+    print("-Extraction models")
     extract.estrai("./modelli")
     #RF_training.main(dataset,file_name,iterazioni) -> crea i modelli che però gia esistono
+    print("-Combining models")
     combina_modelli.start() #crea il modello combinato
     file_name = "training_results_combinati"
     prediction.prediction(dataset,file_name)

@@ -11,7 +11,7 @@ def show_popup(title,comment):
     messagebox.showinfo(title,comment)
 
 def on_closing():
-    if messagebox.askokcancel("Chiusura", "Vuoi davvero chiudere l'applicazione?"):
+    if messagebox.askokcancel("Closure", "Do you really want to close the application?"):
         root.destroy()
 
 

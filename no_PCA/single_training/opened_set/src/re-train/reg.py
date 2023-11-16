@@ -1,16 +1,14 @@
 import sounddevice as sd
 import wave
 import extract_features_audio as efa
-import detect_last_label as dll
 import csv
-import os
 
 
 def record_voice(duration,number, sample_rate=44100):
-    print("Dire: ",str(number))
+    print("To say: ",str(number))
     audio_data = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1, dtype='int16')
     sd.wait()
-    print("Registrazione completata.")
+    print("Registration completed.")
     return audio_data.flatten()
 
 def save_audio_to_wav(audio_data, file_path, sample_rate=44100):

@@ -5,11 +5,11 @@ import extract_features_audio as efa
 
 def record_voice(duration, sample_rate=44100):
     #print("Dire un numero da 0 a 9...")
-    tasto = input("Premere un tasto per poter parlare: ")
-    print("You can start speaking for 1.5s(example a number between 0 and 9)...")
+    tasto = input("Press a button to speak: ")
+    print("You can start speaking for 1.5s...")
     audio_data = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1, dtype='int16')
     sd.wait()
-    print("Registrazione completata.")
+    print("Registration completed.")
     return audio_data.flatten()
 
 def save_audio_to_wav(audio_data, file_path, sample_rate=44100):

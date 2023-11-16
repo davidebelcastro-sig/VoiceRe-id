@@ -20,7 +20,7 @@ def reidentificazione(path_label,modello_path):
     # Separa le etichette dai dati
     X_train = train_data.drop('label', axis=1)
     y_train = train_data['label']
-    print("Calcolo delle probabilità di appartenenza alle classi...")
+    print("Output prediction in progress...")
 
     # Controllo che il file pkl non esista già
     if os.path.exists(modello_path):
@@ -63,9 +63,9 @@ if __name__ == "__main__":
     indice = indice[0][0] + 1
     print("Expected: No person")
     if massimo >= thresold:
-        print("La persona è la numero: " + str(indice))
+        print("Output : " + str(indice))
     else:
-        print("La persona non è presente nel dataset")
+        print("Output: No person")
 
     path = "re-train.csv"
     label = dll.detect(path_label)
@@ -73,21 +73,22 @@ if __name__ == "__main__":
     label = label + 1
 
     #acquisisco i dati della persona
-    print("Acquisizione dati in corso...")
+    print("Data gathering in progress...")
+    tasto = input("Press a button to speak: ")
     re.main(path,str(label))
 
     #faccio il re-train
-    print("Re-train in corso...")
+    print("Re-train in progress...")
     tr.new_training(path_label)
 
     #rifaccio re-id
-    print("Re-id in corso...")
+    print("Re-id in progress...")
     result = reidentificazione(path_label,modello2)
     massimo = max(result)
     indice = np.where(result == massimo)
     indice = indice[0][0] + 1
     print("Expected: 61")
     if massimo >= thresold:
-        print("La persona è la numero: " + str(indice))
+        print("Output : " + str(indice))
     else:
-        print("La persona non è presente nel dataset")
+        print("Output: No person")

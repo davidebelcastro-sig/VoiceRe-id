@@ -3,9 +3,9 @@
 # Verifica se il file accessi.csv esiste
 if [ -e "./csv/accessi.csv" ]; then
 
-	echo "-Estrai modelli"
+	echo "-Extraction models"
 	python3 src/extract.py
-	echo "-Combina modelli"
+	echo "-Combining models"
 	python3 src/combina_modelli.py
 	echo "Remove previous files"
 	python3 src/remove_img.py
@@ -21,9 +21,9 @@ if [ -e "./csv/accessi.csv" ]; then
 
 else
 
-	echo "-Crea modelli"
+	echo "-Extraction models"
 	python3 src/crea_modelli.py
-	echo "-Combina modelli"
+	echo "-Combining models"
 	python3 src/combina_modelli.py
 	echo "-Training"
 	python3 src/prediction.py
