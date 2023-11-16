@@ -9,6 +9,7 @@ def get_accuracy(path_accessi,path_output):
     #apri file csv "risultat" e prendi colonna threshold
     threshold_values = pd.read_csv("./csv/risultati.csv")
     threshold_values = threshold_values['threshold'].tolist()
+    threshold_values = sorted(threshold_values)
     with open(path_output, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["threshold", "far", "frr", "acc", "tpr", "tnr", "ppv", "npv", "f1_score"])

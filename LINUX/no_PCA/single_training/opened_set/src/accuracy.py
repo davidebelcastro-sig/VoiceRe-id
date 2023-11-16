@@ -9,7 +9,7 @@ path = './file_csv/accessi.csv'
 path_result = "./file_csv/risultati.csv"
 
 df = pd.read_csv(path)
-threshold_values = svt.vector_thresold(path)
+threshold_values = sorted(svt.vector_thresold(path))
 
 with open(path_result, 'w', newline='') as file:
     writer = csv.writer(file)
