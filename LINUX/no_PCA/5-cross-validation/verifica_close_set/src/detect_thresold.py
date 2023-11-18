@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 # Carica il tuo file CSV
-df = pd.read_csv('./output/risultati.csv')
+df = pd.read_csv('./csv/accuracy_combined.csv')
 
 # Estrai le colonne di interesse
 thresholds = df['threshold']
@@ -26,10 +26,6 @@ err_value = far_values[intersection_point]
 # Estrai il threshold corrispondente al punto di intersezione
 optimal_threshold = thresholds[intersection_point]
 
-
-
-
-# Se ci sono più valori in cui FRR è zero, prendi il primo
 # Aggiunta di marcatori per indicare il punto di intersezione
 plt.scatter(optimal_threshold, err_value, color='red', label='ERR Intersection Point')
 

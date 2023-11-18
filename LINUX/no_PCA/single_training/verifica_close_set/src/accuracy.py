@@ -6,7 +6,7 @@ import scelta_vector_thresold as svt
 # Carica il file CSV
 path = './file_csv/accessi.csv'
 
-path_result = "./file_csv/risultati.csv"
+path_result = "./output/risultati.csv"
 
 df = pd.read_csv(path)
 threshold_values = sorted(svt.vector_thresold(path))

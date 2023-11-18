@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Carica il tuo file CSV
-df = pd.read_csv('./output/risultati.csv')
+df = pd.read_csv('./csv/accuracy_combined.csv')
 th = df['threshold'].values
 far = df['FAR'].values
 cdir = df['CDIR'].values

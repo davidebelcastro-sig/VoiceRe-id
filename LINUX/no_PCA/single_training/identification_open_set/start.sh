@@ -3,7 +3,7 @@
 # Verifica se il file accessi.csv esiste
 if [ -e "./file_csv/accessi.csv" ]; then
 
-	echo "Remove previous files"
+	echo "-Remove previous files"
 	python3 src/remove_img.py
 	echo "-Performance Evaluation"
 	python3 src/accuracy.py

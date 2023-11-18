@@ -21,13 +21,13 @@ def main():
     prediction.pred("./modelli/modello_combinato.pkl", "./csv/accessi.csv")
     remove_img.rem() #elimina le immagini
     print("-Performance Evaluation")
-    accuracy.get_accuracy("./csv/accessi.csv", "./csv/accuracy.csv")
+    accuracy.get_accuracy("./csv/accessi.csv", "./output/accuracy.csv")
     print("-Curva ROC")
-    roc.roc("./csv/accuracy.csv", "./output/roc.png")
+    roc.roc("./output/accuracy.csv", "./output/roc.png")
     print("-Curva DET")
-    det.det("./csv/accuracy.csv", "./output/det.png")
+    det.det("./output/accuracy.csv", "./output/det.png")
     print("-Detect Thresold")
-    detect_thresold.detect_th("./csv/accuracy.csv", "./output/detect_thresold.png")
+    detect_thresold.detect_th("./output/accuracy.csv", "./output/detect_thresold.png")
     starting_directory = "."
     # Chiama la funzione per eliminare i file .pkl
     remove_model.delete_pkl_files(starting_directory)

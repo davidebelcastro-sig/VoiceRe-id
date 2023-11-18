@@ -7,7 +7,7 @@ import csv
 path = './file_csv/accessi.csv'
 df = pd.read_csv(path)
 
-path_result = "./file_csv/risultati.csv"
+path_result = "./output/risultati.csv"
 
 #lista da 0.01 a 0.80 con step 0.01
 threshold_values = [round(x * 0.01, 2) for x in range(1, 81)]
@@ -15,7 +15,7 @@ threshold_values = [round(x * 0.01, 2) for x in range(1, 81)]
 
 with open(path_result, 'w', newline='') as file:
     writer = csv.writer(file)
-    writer.writerow(["threshold", "CDIR", "FAR"])
+    writer.writerow(["threshold", "CDIR", "FAR", "FRR"])
 
 
 for threshold in threshold_values:
@@ -43,5 +43,6 @@ for threshold in threshold_values:
     #scrivo su file csv
     with open(path_result, 'a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow([threshold, cdir/tentativi_legittimi, far/tentativi_impostori])
+        frr = 1 - cdir/tentativi_legittimi
+        writer.writerow([threshold, cdir/tentativi_legittimi, far/tentativi_impostori, frr])
     

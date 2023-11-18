@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Carica il tuo file CSV
-df = pd.read_csv('./output/risultati.csv')
+df = pd.read_csv('./csv/accuracy_combined.csv')
 
 # Estrai le colonne di interesse
 thresholds = df['threshold']

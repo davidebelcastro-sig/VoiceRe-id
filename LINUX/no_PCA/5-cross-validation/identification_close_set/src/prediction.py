@@ -1,49 +1,48 @@
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
 import pickle
 import os
-import zipfile
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import precision_score, recall_score
+from sklearn.metrics import precision_score, recall_score,accuracy_score
 import csv
+
+def predizione_modello(path,X_test,y_test):
+    rf_model = pickle.load(open(path, 'rb'))
+    rf_result = rf_model.predict(X_test)
+    precision = precision_score(y_test, rf_result, average='weighted')
+    recall = recall_score(y_test, rf_result, average='weighted')
+    f1_score = 2 * (precision * recall) / (precision + recall)
+    accuracy = accuracy_score(y_test, rf_result)
+    return precision, recall, f1_score, accuracy
 
 print("Accuracy calculation...")
 
-# Carica i dati di addestramento e test
-train_data = pd.read_csv('./file_csv/features_train.csv')
+
 test_data = pd.read_csv('./file_csv/features_test.csv')
 
-# Separa le etichette dai dati
-X_train = train_data.drop('label', axis=1)
-y_train = train_data['label']
+
 
 X_test = test_data.drop('label', axis=1)
 y_test = test_data['label']
 
 
 #Controllo che il file pkl non esista già
-if os.path.exists('modello_random_forest.pkl'):
+if os.path.exists('./modelli/modello_combinato.pkl'):
     # Caricamento del modello da un file pickle
-    with open('modello_random_forest.pkl', 'rb') as file:
+    with open('./modelli/modello_combinato.pkl', 'rb') as file:
         rf_model = pickle.load(file)
 else:
-    #c'è il zip?
-    zip_file_path = "modello_random_forest.zip"
-    if os.path.exists(zip_file_path):
-        # Apri il file ZIP in modalità lettura
-        with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
-            # Estrai tutti i file contenuti nel file ZIP nella cartella di destinazione
-            zip_ref.extractall(".")
-        # Caricamento del modello da un file pickle
-        with open('modello_random_forest.pkl', 'rb') as file:
-            rf_model = pickle.load(file)
-    else:
-        rf_model = RandomForestClassifier()
-        rf_model.fit(X_train, y_train)
-        # Salvataggio del modello in formato pickle
-        with open('modello_random_forest.pkl', 'wb') as file:
-            pickle.dump(rf_model, file)
+    print("Error: modello_random_forest.pkl not found")
+		
+prec1, rec1, f1_1,acc1 = predizione_modello('./modelli/modello_0.pkl',X_test,y_test)
+prec2, rec2, f1_2,acc2 = predizione_modello('./modelli/modello_1.pkl',X_test,y_test)
+prec3, rec3, f1_3,acc3 = predizione_modello('./modelli/modello_2.pkl',X_test,y_test)
+prec4, rec4, f1_4,acc4 = predizione_modello('./modelli/modello_3.pkl',X_test,y_test)
+prec5, rec5, f1_5,acc5 = predizione_modello('./modelli/modello_4.pkl',X_test,y_test)
+media_prec = (prec1 + prec2 + prec3 + prec4 + prec5) / 5
+media_rec = (rec1 + rec2 + rec3 + rec4 + rec5) / 5
+media_f1 = (f1_1 + f1_2 + f1_3 + f1_4 + f1_5) / 5
+media_acc = (acc1 + acc2 + acc3 + acc4 + acc5) / 5
 
 
 rf_probabilities = rf_model.predict_proba(X_test)
@@ -79,23 +78,17 @@ plt.annotate(f'Recognition Rate: {accuracy_at_rank1:.2%}',
 plt.savefig('./output/cmc_curve.png')
 plt.close()
 
-
 rf_result = rf_model.predict(X_test)
 precision = precision_score(y_test, rf_result, average='weighted')
 recall = recall_score(y_test, rf_result, average='weighted')
 f1_score = 2 * (precision * recall) / (precision + recall)
-
-
-# Percorso del file CSV
-csv_file_path = "./output/accuracy.csv"
-
-# Scrivi i valori nel file CSV
-with open(csv_file_path, mode='w', newline='') as csv_file:
-    writer = csv.writer(csv_file)
-    # Scrivi l'intestazione
-    writer.writerow(['Precision', 'Recall', 'F1 Score'])
-    # Scrivi i valori
-    writer.writerow([precision, recall, f1_score])
-
-
+accuracy = accuracy_score(y_test, rf_result)
+with open("./output/accuracy.csv",mode="w", newline='') as csv_file:
+    header = ['Value', 'Average', 'Combined']
+    writer = csv.writer(csv_file, delimiter=',')
+    writer.writerow(header)
+    writer.writerow(['Precision', str(media_prec), str(precision)])
+    writer.writerow(['Recall', str(media_rec), str(recall)])
+    writer.writerow(['F1 Score', str(media_f1), str(f1_score)])
+    #writer.writerow(['Accuracy', str(media_acc), str(accuracy)])
 print("Accuracy calculation completed, you can see the result in the output folder")
