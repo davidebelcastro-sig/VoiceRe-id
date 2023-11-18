@@ -15,7 +15,7 @@ def roc(path1,path2):
     # Plotta la curva ROC
     plt.figure(figsize=(8, 8))
     plt.plot(far_values, tpr_values, label='ROC Curve')  
-
+    plt.fill_between(far_values, tpr_values, color='lightblue', alpha=0.3)
 
 
 
