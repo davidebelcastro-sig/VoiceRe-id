@@ -1,6 +1,4 @@
 import pickle
-import prediction
-import accuracy
 import copy
 
 def combine_models(models):

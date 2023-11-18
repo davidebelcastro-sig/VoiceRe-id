@@ -4,8 +4,11 @@ import extract_features_audio as efa
 import csv
 
 
+
+
 def record_voice(duration,number, sample_rate=44100):
-    print("To say: ",str(number))
+   
+    print("To say at level: ",str(number))
     audio_data = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1, dtype='int16')
     sd.wait()
     print("Registration completed.")
@@ -36,6 +39,7 @@ def main(csv_file_retrain_path,label):
     duration = 1.5  # durata della registrazione in secondi
     # Registra la voce
     for number in range(0,10):
+
         audio_data = record_voice(duration,number)
         # Salva la registrazione su file wav
         save_audio_to_wav(audio_data, "audio.wav")
