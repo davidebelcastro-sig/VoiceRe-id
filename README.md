@@ -75,4 +75,4 @@ The dataset is downloaded from the [link](https://github.com/soerenab/AudioMNIST
 
 This is the Confusion Matrix with 5 cross validation in Verification, without PCA
 
-![Main screen](https://github.com/davidebelcastro-sig/PersonalTrainer/assets/73530772/2d116228-e29d-43ae-8c2b-827fbf883979](https://github.com/davidebelcastro-sig/VoiceRe-id/blob/main/cm.png)https://github.com/davidebelcastro-sig/VoiceRe-id/blob/main/cm.png)
+![Main screen](https://github.com/davidebelcastro-sig/VoiceRe-id/blob/main/cm.png)
