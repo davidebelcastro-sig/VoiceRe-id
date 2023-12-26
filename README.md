@@ -12,42 +12,42 @@ Follow the provided instructions in each directory to execute the specific compo
 
 ### LINUX Directory
 
-The LINUX directory contains two subdirectories: **PCA** and **NO_PCA**.
-
-#### PCA Subdirectory
-- **Identification (Closed Set):** Run identification on the closed set by executing the command:
-  ```
-  bash start.sh
-  ```
-  The results will be available in the PCA/identification_close_set/output directory.
-
+  The LINUX directory contains two subdirectories: **PCA** and **NO_PCA**.
   
--- **Verification:** Run Verification by executing the command:
-  ```
-  bash start.sh
-  ```
-The results will be available in the PCA/verifica_close_set/output directory.
-
-
-#### NO_PCA Subdirectory
-Inside the NO_PCA directory, there are two subdirectories:
-- **5-Cross Validation:**
-- **Single Training:**
-
-**Note** Both have the following commands
+  #### PCA Subdirectory
+  - **Identification (Closed Set):** Run identification on the closed set by executing the command:
+    ```
+    bash start.sh
+    ```
+    The results will be available in the PCA/identification_close_set/output directory.
   
-- **Identification (Closed Set):** 
+    
+  -- **Verification:** Run Verification by executing the command:
+    ```
+    bash start.sh
+    ```
+  The results will be available in the PCA/verifica_close_set/output directory.
+
+
+  #### NO_PCA Subdirectory
+  Inside the NO_PCA directory, there are two subdirectories:
+  - **5-Cross Validation:**
+  - **Single Training:**
+
+  **Note** Both have the following commands
+    
+  - **Identification (Closed Set):** 
+    ```
+    bash start.sh
+    ```
+  - **Identification (Open Set):**
+    ```
+    bash start.sh
+    ```
+  - **Verification:**
   ```
-  bash start.sh
-  ```
-- **Identification (Open Set):**
-  ```
-  bash start.sh
-  ```
-- **Verification:**
-  ```
-  bash start.sh
-  ```
+    bash start.sh
+    ```
 
 - **Plus for Single Training:**
 
