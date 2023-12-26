@@ -71,3 +71,6 @@ pip3 install -r requirements.txt
 
 The dataset is downloaded from the [link](https://github.com/soerenab/AudioMNIST/tree/master).
 
+## Output Example
+
+![Main screen](https://github.com/davidebelcastro-sig/PersonalTrainer/assets/73530772/2d116228-e29d-43ae-8c2b-827fbf883979)
