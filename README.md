@@ -4,7 +4,11 @@ Voice re-identification (voice re-id) is a specialized application designed for 
 
 ## System Structure
 
-The project is organized into two main directories: **LINUX** and **NO_PCA**.
+The project is organized into two main directories: **LINUX** and **WINDOWS**.
+
+**Note:** All commands must be executed within the appropriate directory.
+
+Follow the provided instructions in each directory to execute the specific components of the voice re-identification.
 
 ### LINUX Directory
 
@@ -12,50 +16,53 @@ The LINUX directory contains two subdirectories: **PCA** and **NO_PCA**.
 
 #### PCA Subdirectory
 - **Identification (Closed Set):** Run identification on the closed set by executing the command:
+  ```
+  bash start.sh
+  ```
+  The results will be available in the PCA/identification_close_set/output directory.
 
+  
+-- **Verification:** Run Verification by executing the command:
+  ```
+  bash start.sh
+  ```
+The results will be available in the PCA/verifica_close_set/output directory.
 
-The results will be available in the PCA/Identification/Closed_Set/output directory.
 
 #### NO_PCA Subdirectory
 Inside the NO_PCA directory, there are two subdirectories:
 - **5-Cross Validation:**
-- **Identification (Closed Set):** Execute the following command:
-  ```
-  bash start.sh
-  ```
-- **Identification (Open Set):**
-  ```
-  python3 run.py
-  ```
-- **Verification:**
-  ```
-  python3 run.py
-  ```
-
 - **Single Training:**
-- **Identification (Closed Set):**
+
+**Note** Both have the following commands
+  
+- **Identification (Closed Set):** 
   ```
   bash start.sh
   ```
 - **Identification (Open Set):**
   ```
-  python3 run.py
+  bash start.sh
   ```
 - **Verification:**
   ```
-  python3 run.py
+  bash start.sh
   ```
-- **Run-Time Re-identification:**
+
+- **Plus for Single Training:**
+
+  - **Run-Time Re-identification:**
   Allows user registration in the system and subsequent re-identification. Execute the appropriate commands as mentioned in the directory.
-
-### Running Instructions
-
-Follow the provided instructions in each directory to execute the specific components of the voice re-identification
+   ```
+  bash reid_runtime.sh
+  ```
 
 ## Installation
 
 You can use the requirements.txt file to install packages with pip (created with the command pip freeze > requirements.txt):
-
+``` 
+pip3 install -r requirements.txt
+```
 
 
 ## Dataset
