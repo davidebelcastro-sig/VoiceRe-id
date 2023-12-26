@@ -44,15 +44,15 @@ Follow the provided instructions in each directory to execute the specific compo
     bash start.sh
     ```
   - **Verification:**
-  ```
-    bash start.sh
+    ```
+      bash start.sh
     ```
 
 - **Plus for Single Training:**
 
   - **Run-Time Re-identification:**
   Allows user registration in the system and subsequent re-identification. Execute the appropriate commands as mentioned in the directory.
-   ```
+  ```
   bash reid_runtime.sh
   ```
 
@@ -62,7 +62,6 @@ You can use the requirements.txt file to install packages with pip (created with
 ``` 
 pip3 install -r requirements.txt
 ```
-
 
 ## Dataset
 
