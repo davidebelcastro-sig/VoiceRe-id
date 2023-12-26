@@ -1,71 +1,64 @@
-# Voice Re-identification
+# Voice Re-Identification System
 
-Voice re-id is an application that allows a person to be recognized by their voice.
+Voice re-identification (voice re-id) is a specialized application designed for recognizing individuals based on their voice patterns.
 
+## System Structure
 
-## How It Works
+The project is organized into two main directories: **LINUX** and **NO_PCA**.
 
-There are two directories
-PCA and no_PCA
-Both PCA and no_PCA perform reidentification from the speech signal via opened_set and closed_set.
-In the opened_set system it is possible to run "run-time-reid" and be re-identified after registering in the system.
-Accuracy values ​​are reported in both the closed and opened sets.
-Inside no_PCA there are two directories
-single_training and training_rinforzato, they are two different ways to do training.
+### LINUX Directory
 
+The LINUX directory contains two subdirectories: **PCA** and **NO_PCA**.
 
-## Running Instructions
-
-### Windows
+#### PCA Subdirectory
+- **Identification (Closed Set):** Run identification on the closed set by executing the command:
 
 
-### Linux
+The results will be available in the PCA/Identification/Closed_Set/output directory.
 
-For PCA/closed_set, inside this directory run:
-```
-bash start.sh
-```
-and the output are presents in the directory PCA/closed_set/output
+#### NO_PCA Subdirectory
+Inside the NO_PCA directory, there are two subdirectories:
+- **5-Cross Validation:**
+- **Identification (Closed Set):** Execute the following command:
+  ```
+  bash start.sh
+  ```
+- **Identification (Open Set):**
+  ```
+  python3 run.py
+  ```
+- **Verification:**
+  ```
+  python3 run.py
+  ```
 
+- **Single Training:**
+- **Identification (Closed Set):**
+  ```
+  bash start.sh
+  ```
+- **Identification (Open Set):**
+  ```
+  python3 run.py
+  ```
+- **Verification:**
+  ```
+  python3 run.py
+  ```
+- **Run-Time Re-identification:**
+  Allows user registration in the system and subsequent re-identification. Execute the appropriate commands as mentioned in the directory.
 
-For PCA/opened_set, inside this directory run:
-```
-python3 run.py
-```
-and the output are presents in the directory PCA/opened_set/output
+### Running Instructions
 
+Follow the provided instructions in each directory to execute the specific components of the voice re-identification
 
-For no_PCA/single_training/closed_set, inside this directory run:
-```
-bash start.sh
-```
-
-For no_PCA/single_training/opened_set, inside this directory run:
-```
-python3 run.py
-```
-
-For no_PCA/training_rinforzato/closed_set, inside this directory run:
-```
-bash start.sh
-```
-
-For no_PCA/training_rinforzato/opened_set, inside this directory run:
-```
-python3 run.py
-```
-
-## Installation  
+## Installation
 
 You can use the requirements.txt file to install packages with pip (created with the command pip freeze > requirements.txt):
-``` 
-pip3 install -r requirements.txt
-```
+
+
 
 ## Dataset
 
 The dataset is downloaded from the [link](https://github.com/soerenab/AudioMNIST/tree/master).
-
-
-
 
