@@ -4,7 +4,8 @@ Voice re-identification (voice re-id) is a specialized application designed for 
 
 ## REPORT
 
-For a complete explanation of the project and to view the obtained results, please refer to the project report.
+For a complete explanation of the project and to view the obtained results, please refer to the [project report](https://github.com/davidebelcastro-sig/VoiceRe-id/blob/main/report.pdf).
+
 
 ## System Structure
 
