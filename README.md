@@ -73,4 +73,6 @@ The dataset is downloaded from the [link](https://github.com/soerenab/AudioMNIST
 
 ## Output Example
 
+This is the Confusion Matrix with 5 cross validation in Verification, without PCA
+
 ![Main screen](https://github.com/davidebelcastro-sig/PersonalTrainer/assets/73530772/2d116228-e29d-43ae-8c2b-827fbf883979)
