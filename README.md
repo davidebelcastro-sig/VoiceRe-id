@@ -21,12 +21,11 @@ Follow the provided instructions in each directory to execute the specific compo
     ```
     The results will be available in the PCA/identification_close_set/output directory.
   
-    
-  -- **Verification:** Run Verification by executing the command:
+  - **Verification:** Run Verification by executing the command:
     ```
     bash start.sh
     ```
-  The results will be available in the PCA/verifica_close_set/output directory.
+    The results will be available in the PCA/verifica_close_set/output directory.
 
 
   #### NO_PCA Subdirectory
