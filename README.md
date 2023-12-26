@@ -2,6 +2,10 @@
 
 Voice re-identification (voice re-id) is a specialized application designed for recognizing individuals based on their voice patterns.
 
+## REPORT
+
+For a complete explanation of the project and to view the obtained results, please refer to the project report.
+
 ## System Structure
 
 The project is organized into two main directories: **LINUX** and **WINDOWS**.
