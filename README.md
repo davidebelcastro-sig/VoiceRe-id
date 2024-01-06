@@ -1,67 +1,71 @@
-# Voice Re-Identification System
+# Voice Re-identification
 
-Voice re-identification (voice re-id) is a specialized application designed for recognizing individuals based on their voice patterns.
-
-## REPORT
-
-For a complete explanation of the project and to view the obtained results, please refer to the [project report](https://github.com/davidebelcastro-sig/VoiceRe-id/blob/main/report.pdf).
+Voice re-id is an application that allows a person to be recognized by their voice.
 
 
-## System Structure
+## How It Works
 
-The project is organized into two main directories: **LINUX** and **WINDOWS**.
-
-**Note:** All commands must be executed within the appropriate directory.
-
-Follow the provided instructions in each directory to execute the specific components of the voice re-identification.
-
-### LINUX Directory
-
-  The LINUX directory contains two subdirectories: **PCA** and **NO_PCA**.
-  
-  #### PCA Subdirectory
-  - **Identification (Closed Set):** Run identification on the closed set by executing the command:
-    ```
-    bash start.sh
-    ```
-    The results will be available in the PCA/identification_close_set/output directory.
-  
-  - **Verification:** Run Verification by executing the command:
-    ```
-    bash start.sh
-    ```
-    The results will be available in the PCA/verifica_close_set/output directory.
+There are two directories
+PCA and no_PCA
+Both PCA and no_PCA perform reidentification from the speech signal via opened_set and closed_set and verification.
+In the opened_set system it is possible also to run "run-time-reid" and be re-identified after registering in the system.
+Accuracy values ​​are reported in the output directory inside the current directory.
+Inside no_PCA there are two directories
+single_training and training_rinforzato, they are two different ways to do training.
 
 
-  #### NO_PCA Subdirectory
-  Inside the NO_PCA directory, there are two subdirectories:
-  - **5-Cross Validation:**
-  - **Single Training:**
+## Running Instructions
 
-  **Note** Both have the following commands
-    
-  - **Identification (Closed Set):** 
-    ```
-    bash start.sh
-    ```
-  - **Identification (Open Set):**
-    ```
-    bash start.sh
-    ```
-  - **Verification:**
-    ```
-      bash start.sh
-    ```
+### Windows
 
-- **Plus for Single Training:**
 
-  - **Run-Time Re-identification:**
-  Allows user registration in the system and subsequent re-identification. Execute the appropriate commands as mentioned in the directory.
-  ```
-  bash reid_runtime.sh
-  ```
+### Linux
 
-## Installation
+For PCA/verifica, inside this directory run:
+```
+bash start.sh
+```
+and the output are presents in the directory PCA/verifica/output
+
+
+For PCA/identification_close_set, inside this directory run:
+```
+bash start.sh
+```
+and the output are presents in the directory PCA/identification_close_set/output
+
+
+For no_PCA/single_training/identification_closed_set, inside this directory run:
+```
+bash start.sh
+```
+and the output are presents in the directory no_PCA/single_training/identification_closed_set/output
+
+
+For no_PCA/single_training/identification_open_set, inside this directory run:
+```
+bash start.sh
+```
+and the output are presents in the directory no_PCA/single_training/identification_open_set/output
+
+
+For no_PCA/single_training/verifica, inside this directory run:
+```
+bash start.sh
+```
+and the output are presents in the directory no_PCA/single_training/verifica/output
+
+
+For no_PCA/single_training/runtimereid, inside this directory run:
+```
+bash reid_runtime.sh
+```
+
+For no_PCA/5-cross-validation is the same!!
+
+
+
+## Installation  
 
 You can use the requirements.txt file to install packages with pip (created with the command pip freeze > requirements.txt):
 ``` 
@@ -71,6 +75,7 @@ pip3 install -r requirements.txt
 ## Dataset
 
 The dataset is downloaded from the [link](https://github.com/soerenab/AudioMNIST/tree/master).
+
 
 ## Output Example
 
